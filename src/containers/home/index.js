@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import cssModules from 'react-css-modules'
+import Immutable from 'immutable'
 import scss from './home.scss'
 
 @cssModules(scss, { errorWhenNotFound: false })
@@ -10,14 +11,14 @@ class Home extends Component {
     return (
       <div styleName="home">
         <Link to="/hello">hello</Link>
-        <p>{`hello has been visited? ${this.props.visited}`}</p>
+        <p>{`hello has been visited? ${this.props.visited.get('status')}`}</p>
       </div>
     )
   }
 }
 
 Home.propTypes = {
-  visited: PropTypes.string
+  visited: PropTypes.instanceOf(Immutable.Map),
 }
 
 const mapStateToProps = state => ({

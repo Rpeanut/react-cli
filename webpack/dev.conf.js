@@ -12,6 +12,8 @@ baseConf.plugins = baseConf.plugins.concat([
   new webpack.HotModuleReplacementPlugin()
 ])
 
+baseConf.devtool = ['source-map']
+
 baseConf.module.loaders = [
   {
     test: /\.scss$/,
