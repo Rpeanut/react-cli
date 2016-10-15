@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 import Immutable from 'immutable'
-import { hello } from '../actions'
+import hello from '../actions'
 
 function visited(state = Immutable.fromJS({ status: 'no' }), { type }) {
   switch (type) {

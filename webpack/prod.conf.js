@@ -8,7 +8,7 @@ baseConf.output.filename = 'js/[name].[chunkhash].js'
 
 baseConf.plugins = baseConf.plugins.concat([
   new webpack.DefinePlugin({
-    __PRODUCTION__: true,
+    ENV_PRODUCTION: true,
   }),
   new ExtractTextPlugin('css/[name].[chunkhash].css'),
   new webpack.optimize.UglifyJsPlugin({

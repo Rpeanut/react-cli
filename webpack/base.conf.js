@@ -17,7 +17,7 @@ module.exports = {
 
   plugins: [
     new webpack.DefinePlugin({
-      __PRODUCTION__: false,
+      ENV_PRODUCTION: false,
     }),
     new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
@@ -38,10 +38,17 @@ module.exports = {
   },
 
   resolveLoader: {
-    fallback: [path.join(__dirname, '../node_modules')]
+    fallback: [path.resolve(__dirname, '../node_modules')]
   },
 
   module: {
+    preLoaders: [
+      {
+        test: /\.jsx?$/,
+        loader: 'eslint',
+        exclude: /node_modules/
+      }
+    ],
     loaders: [
       {
         test: /\.scss$/,
@@ -64,6 +71,10 @@ module.exports = {
         exclude: /node_modules/
       }
     ]
+  },
+
+  eslint: {
+    formatter: require('eslint-friendly-formatter')
   },
 
   postcss: function () {
