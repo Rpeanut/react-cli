@@ -23,7 +23,8 @@ baseConf.module.loaders = [
     test: /\.scss$/,
     loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[hash:base64:7]!postcss!sass'),
     exclude: /node_modules/
-  }, {
+  },
+  {
     test: /\.jsx?$/,
     loader: 'react-hot!babel',
     exclude: /node_modules/
