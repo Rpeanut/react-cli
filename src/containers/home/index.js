@@ -5,7 +5,7 @@ import cssModules from 'react-css-modules'
 import Immutable from 'immutable'
 import scss from './home.scss'
 
-@cssModules(scss, { errorWhenNotFound: false })
+@cssModules(scss)
 class Home extends Component {
   render() {
     return (
