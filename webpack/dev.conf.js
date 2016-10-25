@@ -17,7 +17,7 @@ baseConf.devtool = ['source-map']
 baseConf.module.loaders = [
   {
     test: /\.scss$/,
-    loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[hash:base64:7]!postcss!sass',
+    loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass',
     exclude: /node_modules/
   },
   {
