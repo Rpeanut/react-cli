@@ -1,11 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
-import cssModules from 'react-css-modules'
 import Immutable from 'immutable'
-import scss from './home.scss'
+import './home.scss'
 
-@cssModules(scss)
 class Home extends Component {
   render() {
     return (
